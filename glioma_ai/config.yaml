@@ -1,0 +1,47 @@
+model:
+  name: "glioma_segresnet_3d"
+  architecture: "SegResNet"
+  version: "1.0.0"
+  spatial_dims: 3
+  in_channels: 4 # [T1, T1ce, T2, FLAIR]
+  out_channels: 3 # [TC, WT, ET]
+  init_filters: 32
+  dropout_prob: 0.2
+
+data:
+  dataset_name: "BraTS-TCGA-GBM"
+  expected_sequences:
+    - "t1"
+    - "t1ce"
+    - "t2"
+    - "flair"
+  raw_labels:
+    background: 0
+    necrotic_core: 1
+    edema: 2
+    enhancing_tumor: 4
+  monai_label_remap:
+    4: 3 # Convert Label 4 (ET) to 3 so ConvertToMultiChannelBasedOnBratsClassesd extracts ET accurately
+  output_channels:
+    0: "TC" # Tumor Core (labels 1 + 4)
+    1: "WT" # Whole Tumor (labels 1 + 2 + 4)
+    2: "ET" # Enhancing Tumor (label 4)
+  standard_volume_shape: [240, 240, 155]
+  voxel_spacing: [1.0, 1.0, 1.0]
+  patch_size: [96, 96, 96]
+  sw_overlap: 0.5
+
+training:
+  amp: true
+  batch_size: 1
+  learning_rate: 0.0002
+  weight_decay: 0.00001
+  loss: "DiceCELoss"
+  loss_kwargs:
+    sigmoid: true
+    include_background: true
+    to_onehot_y: false
+
+environment:
+  scratch_cache_dir: "C:\\tmp\\glioma_scratch"
+  num_workers: 0 # Windows multiprocessing safety

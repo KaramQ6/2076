@@ -1,0 +1,29 @@
+# Python & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+
+# Environments & Tools
+.venv/
+env/
+venv/
+ENV/
+
+# Large Datasets, Checkpoints & Scratch Data
+*.nii
+*.nii.gz
+*.pth
+*.pt
+*.onnx
+C:/tmp/
+tmp/
+scratch/
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

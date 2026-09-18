@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "run_id": "RUN-GLI-FCB04D93",
+  "case_id": "TCGA-02-0033",
+  "input_ref": "case-TCGA-02-0033",
+  "cancer_type": "glioma",
+  "modality": "MRI",
+  "task": "glioma_subregion_segmentation",
+  "model_id": "glioma_segresnet_3d",
+  "model_version": "1.0.0",
+  "generated_at": "2026-09-18T17:29:13.696436+00:00",
+  "execution_mode": "live",
+  "status": "succeeded",
+  "quality_status": "passed",
+  "findings": [
+    {
+      "finding_id": "FIND-TCGA-02-0033-01",
+      "label": "glioma_subregion_segmentation",
+      "measurements": [
+        {
+          "name": "whole_tumor_volume",
+          "value": 101.34,
+          "unit": "cm3"
+        },
+        {
+          "name": "tumor_core_volume",
+          "value": 41.69,
+          "unit": "cm3"
+        },
+        {
+          "name": "enhancing_tumor_volume",
+          "value": 32.4,
+          "unit": "cm3"
+        }
+      ],
+      "score": null,
+      "artifact_refs": [
+        "C:\\tmp\\glioma_scratch\\artifacts\\TCGA-02-0033\\RUN-GLI-FCB04D93\\TCGA-02-0033_segmentation.nii.gz",
+        "C:\\tmp\\glioma_scratch\\artifacts\\TCGA-02-0033\\RUN-GLI-FCB04D93\\TCGA-02-0033_overlay_axial.png",
+        "C:\\tmp\\glioma_scratch\\artifacts\\TCGA-02-0033\\RUN-GLI-FCB04D93\\TCGA-02-0033_overlay_coronal.png",
+        "C:\\tmp\\glioma_scratch\\artifacts\\TCGA-02-0033\\RUN-GLI-FCB04D93\\TCGA-02-0033_overlay_sagittal.png"
+      ]
+    }
+  ],
+  "error_code": null,
+  "limitations": [
+    "Requires clinician second-reader review before any therapeutic decision.",
+    "Computed volume measurements derived from voxel spacing: [np.float32(1.0), np.float32(1.0), np.float32(1.0)]."
+  ]
+}

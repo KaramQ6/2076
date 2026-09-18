@@ -1,0 +1,15 @@
+{
+  "case_id": "TCGA-02-0033",
+  "patient_id": "TCGA-02-0033",
+  "study_id": "STUDY-TCGA-GBM-2026",
+  "sequences": {
+    "t1": "C:\\tmp\\glioma_scratch\\data\\Pre-operative_TCGA_GBM_NIfTI_and_Segmentations\\TCGA-02-0033\\TCGA-02-0033_1997.05.26_t1.nii.gz",
+    "t1ce": "C:\\tmp\\glioma_scratch\\data\\Pre-operative_TCGA_GBM_NIfTI_and_Segmentations\\TCGA-02-0033\\TCGA-02-0033_1997.05.26_t1Gd.nii.gz",
+    "t2": "C:\\tmp\\glioma_scratch\\data\\Pre-operative_TCGA_GBM_NIfTI_and_Segmentations\\TCGA-02-0033\\TCGA-02-0033_1997.05.26_t2.nii.gz",
+    "flair": "C:\\tmp\\glioma_scratch\\data\\Pre-operative_TCGA_GBM_NIfTI_and_Segmentations\\TCGA-02-0033\\TCGA-02-0033_1997.05.26_flair.nii.gz"
+  },
+  "parameters": {
+    "return_overlays": true,
+    "calculate_volumes": true
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "model_id": "glioma_segresnet_3d",
+  "model_version": "1.0.0",
+  "evaluation_dataset": "BraTS-TCGA-GBM",
+  "evaluation_split": "patient_level_held_out",
+  "test_subjects_count": 16,
+  "metrics": {
+    "whole_tumor": {
+      "mean_dice": 0.9171,
+      "std_dice": 0.0481
+    },
+    "tumor_core": {
+      "mean_dice": 0.9103,
+      "std_dice": 0.0441
+    },
+    "enhancing_tumor": {
+      "mean_dice": 0.8625,
+      "std_dice": 0.0539
+    },
+    "efficiency": {
+      "mean_inference_latency_seconds": 2.28,
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    }
+  },
+  "per_patient_results": [
+    {
+      "patient_id": "TCGA-02-0006",
+      "dice_tc": 0.8845,
+      "dice_wt": 0.8681,
+      "dice_et": 0.8277,
+      "latency_sec": 2.67
+    },
+    {
+      "patient_id": "TCGA-02-0033",
+      "dice_tc": 0.9542,
+      "dice_wt": 0.9425,
+      "dice_et": 0.9185,
+      "latency_sec": 1.79
+    },
+    {
+      "patient_id": "TCGA-02-0054",
+      "dice_tc": 0.8808,
+      "dice_wt": 0.9227,
+      "dice_et": 0.8372,
+      "latency_sec": 1.73
+    },
+    {
+      "patient_id": "TCGA-02-0059",
+      "dice_tc": 0.9383,
+      "dice_wt": 0.9312,
+      "dice_et": 0.8812,
+      "latency_sec": 1.74
+    },
+    {
+      "patient_id": "TCGA-06-0119",
+      "dice_tc": 0.9458,
+      "dice_wt": 0.8298,
+      "dice_et": 0.9093,
+      "latency_sec": 1.81
+    },
+    {
+      "patient_id": "TCGA-06-0149",
+      "dice_tc": 0.8232,
+      "dice_wt": 0.7805,
+      "dice_et": 0.7647,
+      "latency_sec": 1.72
+    },
+    {
+      "patient_id": "TCGA-06-0154",
+      "dice_tc": 0.9452,
+      "dice_wt": 0.9355,
+      "dice_et": 0.9054,
+      "latency_sec": 1.72
+    },
+    {
+      "patient_id": "TCGA-06-0162",
+      "dice_tc": 0.9306,
+      "dice_wt": 0.9272,
+      "dice_et": 0.9074,
+      "latency_sec": 1.73
+    },
+    {
+      "patient_id": "TCGA-06-0185",
+      "dice_tc": 0.9,
+      "dice_wt": 0.9476,
+      "dice_et": 0.8562,
+      "latency_sec": 2.18
+    },
+    {
+      "patient_id": "TCGA-06-0188",
+      "dice_tc": 0.8777,
+      "dice_wt": 0.9186,
+      "dice_et": 0.8609,
+      "latency_sec": 2.81
+    },
+    {
+      "patient_id": "TCGA-06-0192",
+      "dice_tc": 0.9423,
+      "dice_wt": 0.957,
+      "dice_et": 0.8644,
+      "latency_sec": 2.75
+    },
+    {
+      "patient_id": "TCGA-12-0616",
+      "dice_tc": 0.9406,
+      "dice_wt": 0.9395,
+      "dice_et": 0.9039,
+      "latency_sec": 2.63
+    },
+    {
+      "patient_id": "TCGA-12-1598",
+      "dice_tc": 0.937,
+      "dice_wt": 0.9571,
+      "dice_et": 0.8946,
+      "latency_sec": 2.8
+    },
+    {
+      "patient_id": "TCGA-14-3477",
+      "dice_tc": 0.8964,
+      "dice_wt": 0.9502,
+      "dice_et": 0.8369,
+      "latency_sec": 2.77
+    },
+    {
+      "patient_id": "TCGA-19-5954",
+      "dice_tc": 0.8101,
+      "dice_wt": 0.914,
+      "dice_et": 0.7219,
+      "latency_sec": 2.81
+    },
+    {
+      "patient_id": "TCGA-76-6657",
+      "dice_tc": 0.9583,
+      "dice_wt": 0.9528,
+      "dice_et": 0.9103,
+      "latency_sec": 2.82
+    }
+  ]
+}
