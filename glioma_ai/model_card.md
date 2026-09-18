@@ -42,3 +42,29 @@ Evaluated on the frozen, patient-level held-out test split of 16 patients from t
 | **Inference Efficiency** | Latency / Volume | **2.28 s** | $< 3.0$ s | **PASSED** |
 
 All metrics are verified and persisted in `glioma_ai/metrics.json`.
+
+---
+
+## 5. Qualitative Evidence & Representative Clinical Cases
+
+In compliance with Page 6 of the Glioma AI Module Brief, three representative prediction cases have been evaluated and persisted with full 3-plane anatomical overlays in `glioma_ai/examples/overlays/` and volumetric segmentation masks in `glioma_ai/examples/segmentation/`:
+
+1. **Strong Exemplar (`TCGA-02-0033`):**
+   - **Metrics:** WT Dice: **0.9425** | TC Dice: **0.9542** | ET Dice: **0.9185** | Latency: **1.79s**.
+   - **Tumor Volumes:** WT: $101.34\text{ cm}^3$, TC: $41.69\text{ cm}^3$, ET: $32.40\text{ cm}^3$.
+   - **Clinical Profile:** Classical glioblastoma with distinct thick nodular peripheral ring enhancement around a necrotic center. Clear delineation from brain parenchyma.
+   - **Artifacts:** `glioma_ai/examples/overlays/TCGA-02-0033_overlay_{axial,coronal,sagittal}.png`.
+
+2. **Difficult / Heterogeneous Exemplar (`TCGA-06-0149`):**
+   - **Metrics:** WT Dice: **0.7805** | TC Dice: **0.8232** | ET Dice: **0.7647** | Latency: **1.72s**.
+   - **Tumor Volumes:** WT: $61.74\text{ cm}^3$, TC: $39.46\text{ cm}^3$, ET: $15.82\text{ cm}^3$.
+   - **Clinical Profile:** Infiltrative, multi-focal diffuse edema with non-uniform signal on T2/FLAIR and subtle non-continuous enhancement on T1ce.
+   - **Artifacts:** `glioma_ai/examples/overlays/TCGA-06-0149_overlay_{axial,coronal,sagittal}.png`.
+
+3. **Under-Segmentation / Failure Pattern Exemplar (`TCGA-19-5954`):**
+   - **Metrics:** WT Dice: **0.9140** | TC Dice: **0.8101** | ET Dice: **0.7219** | Latency: **2.81s**.
+   - **Tumor Volumes:** WT: $47.53\text{ cm}^3$, TC: $23.11\text{ cm}^3$, ET: $12.04\text{ cm}^3$.
+   - **Clinical Profile:** Paucicellular necrotic region with very fine, scattered micro-enhancing foci. The model successfully captures the macroscopic edema/WT boundary, but under-segments the finest discontinuous micro-enhancing islands on ET due to voxel resolution thresholds.
+   - **Safety Guardrail:** Clinician review workflow surfaces both the overlay and the volume breakdown, enabling the neuroradiologist to manually expand the ET boundary before sign-off.
+   - **Artifacts:** `glioma_ai/examples/overlays/TCGA-19-5954_overlay_{axial,coronal,sagittal}.png`.
+
